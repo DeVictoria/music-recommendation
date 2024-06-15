@@ -7,9 +7,9 @@ We use music from [this](https://www.kaggle.com/datasets/saurabhshahane/music-da
 For text preprocessing we use [google universal sentence encoder](https://www.kaggle.com/models/google/universal-sentence-encoder).
 It is a model that encodes text into 512-dimensional vectors that can be used for different natural language tasks.
 
-For recommendations we first ask the user to select their favorite genres, until the user has at least 1 like, random recommendations based on the selected genre are given. Then, until there are 8 likes we recommend similar songs using KNN.
+For recommendations we first ask the user to select their favorite genres, until the user has at least 1 like, random recommendations based on the selected genres are given. Then, until there are 7 likes we recommend similar songs using KNN.
 Because of the large number of features, we use KNN, which is based on ball trees (for more details see. [docs](https://scikit-learn.org/stable/modules/neighbors.html#nearest-neighbor-algorithms:~:text=using%20nearest%20neighbors.-,1.6.4.%20Nearest%20Neighbor%20Algorithms,-%23). 
-When we have 8 tracks, we first look for a few similar playlists and take unique tracks from them.
+When we have 7 tracks, we first look for a few similar playlists and take unique tracks from them.
 
 
 In "app" folder you can find a simple web application, based on [flask framework](https://flask.palletsprojects.com/en/3.0.x/).
