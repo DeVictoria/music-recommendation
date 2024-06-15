@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+    {% if title %}
+        <title>{{ title }} - Music Recommendation Service</title>
+    {% else %}
+        <title>Welcome to our Music Recommendation Service</title>
+    {% endif %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header>
+            <span class="heading-text">
+            Music Recommendation Service
+            </span>
+    <nav>
+            <div class="navigation-link">
+            <a href="{{ url_for('home') }}">Home</a>
+            </div>
+        {% if current_user.is_anonymous %}
+            <div class="navigation-link">
+
+            <a href="{{ url_for('login') }}">Login</a>
+                </div>
+            <span class="navigation-link">
+
+            <a href="{{ url_for('register') }}">Register</a>
+                </span>
+        {% else %}
+            <div class="navigation-link">
+
+                <a href="{{ url_for('liked') }}">Liked</a>
+            </div>
+            <div class="navigation-link">
+
+            <a href="{{ url_for('recommendations') }}">Recommend</a>
+                </div>
+            <div class="navigation-link">
+
+            <a href="{{ url_for('logout') }}">Logout</a>
+                </div>
+        {% endif %}
+    </nav>
+</header>
+<hr>
+<main>
+{% block content %}{% endblock %}
+</main>
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endwith %}
+</body>
+</html>

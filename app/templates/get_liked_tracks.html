@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Your liked tracks</h1>
+    {% for track in tracks %}
+    <div><p>{{ track }}</p></div>
+    {% endfor %}
+{% endblock %}

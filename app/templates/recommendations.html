@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <script src="{{ url_for('static', filename='recommendations.js') }}"></script>
+    <div class="heading-text">Recommendations</div>
+     <form action="" method="post" novalidate>
+         {{ form.hidden_tag() }}
+         <div>
+             <h3>Choose favourable songs from recommendations:</h3>
+                {{ form.recommendation(size=32) }}
+         </div>
+         <div>
+             <h3>Or find one from the database:</h3>
+             <div class="custom-input">
+                <label for="searchField">Search:</label>
+                <input id="searchField" type="search">
+             </div>
+             <br />
+             <span class="custom-button">
+             <button type="button" id="searchButton">Search</button>
+             </span>
+             <ul id="searchBoxes">
+
+             </ul>
+        </div>
+        <hr />
+         <span class="custom-button">
+            {{ form.submit() }}
+        </span>
+     </form>
+{% endblock %}

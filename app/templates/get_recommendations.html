@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Recommendations</h1>
+     <form action="" method="post" novalidate>
+         {{ form.hidden_tag() }}
+         <fieldset class="form-group">
+                {% if form.recommendation.errors %}
+                <div class="invalid-feedback">
+                    {% for error in form.recommendation.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                {% for choice in form.recommendation %}
+                    <div class="form-check">
+                        {{ choice(class="form-check-input") }}
+                        {{ choice.label(class="form-check-label") }}
+                    </div>
+                {% endfor %}
+            </fieldset>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-outline-info") }}
+            </div>
+     </form>
+{% endblock %}

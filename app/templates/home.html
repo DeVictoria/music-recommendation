@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="greetings-hi">
+        Hi,
+    </div>
+    {% if username %}
+    <div class="greetings-name">
+      {{ username }}!
+    </div>
+        <div class="navigation-link">
+            <a href="{{ url_for('recommendations') }}">Discover your recommendations ></a>
+        </div>
+    {% else %}
+        <div class="greetings-name">
+       Stranger!
+        </div>
+        <div class="navigation-link">
+            <a href="{{ url_for('register') }}">Create a new account to discover new music ></a>
+        </div>
+    {% endif %}
+{% endblock %}
