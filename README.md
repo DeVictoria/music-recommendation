@@ -17,4 +17,4 @@ For local run you need to first initialize a user database by running `init.sh` 
 After that you can run application on localhost by command `flask run`.
 
 
-Powered by [Дегтярев Виктор](https://github.com/DeVictoria), [Ситкина Алёна](https://github.com/a-ct-seal) и [Ерёмин Владимир](https://github.com/deytenit)
+Powered by [Дегтярев Виктор](https://github.com/DeVictoria), [Ерёмин Владимир](https://github.com/deytenit) и [Ситкина Алёна](https://github.com/a-ct-seal)
