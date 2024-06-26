@@ -16,9 +16,9 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 login = LoginManager(app)
 
-transformed_data = pd.read_csv('transformed_data.csv')
-initial_data = pd.read_csv('tcc_ceds_music.csv')
-playlists_data = pd.read_csv('playlists.csv')
+transformed_data = pd.read_csv('data/transformed_data.csv')
+initial_data = pd.read_csv('data/tcc_ceds_music.csv')
+playlists_data = pd.read_csv('data/playlists.csv')
 
 prediction_model = PredictionModel(transformed_data, initial_data, playlists_data)
 

@@ -53,7 +53,7 @@ class PredictionModel:
             return get_nearest_music_by_knn(data_by_genres['index'].to_list(), list_ID, gen_size)
 
         else:
-            playlists = pd.read_csv('playlists.csv')['playlists'].apply(ast.literal_eval).to_list()
+            playlists = pd.read_csv('data/playlists.csv')['playlists'].apply(ast.literal_eval).to_list()
             given_playlist = list(map(int, list(list_ID)))
             unique_songs = list(set(song for playlist in playlists for song in playlist).union(set(given_playlist)))
 
